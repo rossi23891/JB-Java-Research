@@ -100,8 +100,8 @@ public class Tasks {
 // Example test case: for a trip with 2 changes on a Wednesday (day 3), calculateScore(2, 3) returns a score of 5 (10-2-3)
 
     public static int calculateScore(int changes, int day) {
-        int score = 10 - changes - day;
-        if (day > 5) {
+        int score = 10 - changes;
+        if (day > 0 && day < 6) {
             score = score - 3;
         }
         return score;
@@ -117,7 +117,7 @@ public class Tasks {
 
     public static int hasDoubled(double savings, int interest) {
         int yearsNumber = 0;
-        double index = (interest/100.0) + 1.0;
+        double index = (interest / 100.0) + 1.0;
         double desiredSum = savings * 2;
         while (savings < desiredSum) {
             yearsNumber++;
